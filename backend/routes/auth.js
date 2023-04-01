@@ -10,6 +10,7 @@ const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validarCampos')
 const { crearUsuario, loginUsuario, revalidarToken } = require('../controllers/authControllers')
+const { validarJWT } = require('../middlewares/validarJwt');
 
 
 router.post(
@@ -34,7 +35,7 @@ router.post(
 );
 
 
-router.post('/renew', revalidarToken);
+router.get('/renew', validarJWT, revalidarToken); // vuelve a actualizar el token para añadir otras tres horas al usuario
 
 
 

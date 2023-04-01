@@ -35,7 +35,7 @@ export const CalendarModal = () => {
 
     const [formSubmitted, setFormSubmitted] = useState(false);
 
-    const [formValues, setFormValues] = useState({ //apuntes datepicker
+    const [formValues, setFormValues] = useState({
         title: '',
         notes: '',
         start: new Date(),
@@ -135,7 +135,7 @@ export const CalendarModal = () => {
                         className="form-control"
                         dateFormat="Pp"
                         showTimeSelect
-                        locale="es" // apuntes junto a datepicker
+                        locale="es"
                         timeCaption="Hora"
                     />
                 </div>
