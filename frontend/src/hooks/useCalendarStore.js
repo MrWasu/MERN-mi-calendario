@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { onAddNewEvent, onDeleteEvent, onSetActiveEvent, onUpdateEvent } from '../store';
 
-
-export const useCalendarStore = () => { // apuntes de los custom hooks junto con el otro archivo y poner como ejemplo
+export const useCalendarStore = () => { 
 
     const dispatch = useDispatch();
     const { events, activeEvent } = useSelector(state => state.calendar);
@@ -12,7 +11,7 @@ export const useCalendarStore = () => { // apuntes de los custom hooks junto con
     }
 
     const startSavingEvent = async (calendarEvent) => {
-        // TODO: llegar al backend
+       
 
         if (calendarEvent._id) {
             // Actualiza
@@ -24,9 +23,7 @@ export const useCalendarStore = () => { // apuntes de los custom hooks junto con
     }
 
     const startDeletingEvent = () => {
-        // TODO: Llegar al backend
-
-
+        // Llegar al backend
         dispatch(onDeleteEvent());
     }
 
@@ -35,7 +32,6 @@ export const useCalendarStore = () => { // apuntes de los custom hooks junto con
         activeEvent,
         events,
         hasEventSelected: !!activeEvent, // si existe regresa true, sino regresa falso
-
 
         startDeletingEvent,
         setActiveEvent,

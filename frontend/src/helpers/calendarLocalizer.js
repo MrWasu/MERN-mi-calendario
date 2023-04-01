@@ -3,7 +3,7 @@ import { format, parse, startOfWeek, getDay } from 'date-fns';
 import esES from 'date-fns/locale/es';
 
 const locales = {
-  'es': esES, // apuntes junto a react calendar
+  'es': esES,
 }
 
 export const localizer = dateFnsLocalizer({

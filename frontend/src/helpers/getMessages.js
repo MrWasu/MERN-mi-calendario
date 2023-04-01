@@ -7,7 +7,7 @@ export const getMessagesES = () => {
         today: 'Hoy',
         month: 'Mes',
         week: 'Semana',
-        day: 'Día', // apuntes junto a calendar
+        day: 'Día', 
         agenda: 'Agenda',
         date: 'Fecha',
         time: 'Hora',

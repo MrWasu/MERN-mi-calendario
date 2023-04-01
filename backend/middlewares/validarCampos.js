@@ -1,7 +1,7 @@
 const { response } = require('express');
 const { validationResult } = require('express-validator');
 
-const validarCampos = (req, res = response, next) => { //apuntes next se ejecuta dentro de cada check
+const validarCampos = (req, res = response, next) => { 
 
     // manejo de errores
     const errors = validationResult( req );
@@ -12,11 +12,9 @@ const validarCampos = (req, res = response, next) => { //apuntes next se ejecuta
         });
     }
 
-
-    next();
+    next(); // e utiliza para indicarle a Express que la función validarCampos ha terminado de manejar la solicitud actual
 }
 
 module.exports = {
     validarCampos
 }
-

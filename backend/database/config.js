@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const dbConnection = async() => {
 
     try {
@@ -17,9 +16,7 @@ const dbConnection = async() => {
         throw new Error('Error DB');
     }
 
-
 }
-
 
 module.exports = {
     dbConnection

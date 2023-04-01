@@ -26,7 +26,7 @@ router.post(
 
 router.post(
     '/', 
-    [
+    [// middlewares
         check('email', 'El email es obligatorio').isEmail(),
         check('password', 'El password debe de ser de 6 caracteres').isLength({ min: 6 }),
         validarCampos
@@ -37,11 +37,6 @@ router.post(
 
 router.get('/renew', validarJWT, revalidarToken); // vuelve a actualizar el token para añadir otras tres horas al usuario
 
-
-
-
-
-
 module.exports = router; // asi se hacen las exportaciones en node
 /* router.post('/register', (req, res) => {
     
@@ -50,3 +45,4 @@ module.exports = router; // asi se hacen las exportaciones en node
     msg: 'registro'
    })
 })   */
+

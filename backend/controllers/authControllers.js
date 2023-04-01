@@ -2,7 +2,7 @@ const { response } = require('express')
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs');
 
-const Usuario = require('../models/Usuario'); // apuntes junto a lo demas
+const Usuario = require('../models/Usuario'); 
 
 const { generarJWT } = require('../helpers/jwt');
 
@@ -24,18 +24,18 @@ const crearUsuario = async (req, res = response) => {
 
         let usuario = await Usuario.findOne({ email })
 
-        if (usuario) { // apuntes de que hace esto junto a la linea de arriba
+        if (usuario) { 
             return res.status(400).json({
                 ok: false,
                 msg: 'El usuario ya existe'
             });
         }
 
-        usuario = new Usuario(req.body) // apuntes jutno a lo demas
+        usuario = new Usuario(req.body) 
 
         // Encriptar contraseña
         const salt = bcrypt.genSaltSync();
-        usuario.password = bcrypt.hashSync(password, salt); // apuntes que es salt?
+        usuario.password = bcrypt.hashSync(password, salt); 
 
         await usuario.save(); // se guardaa en la base de datos
 
@@ -76,7 +76,7 @@ const loginUsuario = async (req, res = response) => {
         // confirmar usuario 
         const usuario = await Usuario.findOne({ email })
 
-        if (!usuario) { // apuntes de que hace esto junto a la linea de arriba
+        if (!usuario) { 
             return res.status(400).json({
                 ok: false,
                 msg: 'usuario/contraseña incorrectos'
@@ -84,7 +84,7 @@ const loginUsuario = async (req, res = response) => {
         }
 
         // Confirmar los passwords
-        const validPassword = bcrypt.compareSync(password, usuario.password); // apuntes de bcrypt
+        const validPassword = bcrypt.compareSync(password, usuario.password); 
 
         if (!validPassword) {
             return res.status(400).json({
@@ -135,7 +135,7 @@ const revalidarToken = async (req, res = response) => {
 }
 
 
-module.exports = { // apunte exports en plural
+module.exports = { 
     crearUsuario,
     loginUsuario,
     revalidarToken,

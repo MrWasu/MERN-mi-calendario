@@ -9,7 +9,7 @@ import { useUiStore, useCalendarStore } from '../../hooks';
 
 
 
-export const CalendarPage = () => { // apuntes react big calendar
+export const CalendarPage = () => {
 
   const { openDateModal } = useUiStore();
   const { events, setActiveEvent } = useCalendarStore();
@@ -79,3 +79,5 @@ export const CalendarPage = () => { // apuntes react big calendar
     </>
   )
 }
+
+
