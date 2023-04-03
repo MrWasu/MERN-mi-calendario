@@ -16,12 +16,12 @@ app.use(cors())
 // Directorio Público
 app.use( express.static('public') ); 
 
-
 // Lectura y parseo del body
 app.use( express.json() );
 
 // Rutas
 app.use('/api/auth', require('./routes/auth') ); // esto es un middleware
+app.use('/api/events', require('./routes/events'))
 // CRUD: Eventos
 
 
