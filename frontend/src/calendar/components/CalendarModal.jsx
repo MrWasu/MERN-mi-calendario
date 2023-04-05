@@ -11,6 +11,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import es from 'date-fns/locale/es';
 import { useCalendarStore, useUiStore } from '../../hooks';
+import { useSelector } from 'react-redux';
 
 
 registerLocale('es', es);
@@ -74,8 +75,8 @@ export const CalendarModal = () => {
         })
     }
 
-    const onCloseModal = () => {
-        closeDateModal();
+    const onCloseModal = () => {    
+            closeDateModal()
     }
 
     const onSubmit = async (event) => {
@@ -91,12 +92,16 @@ export const CalendarModal = () => {
 
         if (formValues.title.length <= 0) return;
 
-        console.log(formValues);
 
-        // TODO: 
         await startSavingEvent(formValues);
         closeDateModal();
         setFormSubmitted(false);
+    }
+    const { startDeletingEvent } = useCalendarStore();
+
+    const handleDelete = () => {
+        startDeletingEvent();
+        onCloseModal();
     }
 
 
@@ -174,6 +179,15 @@ export const CalendarModal = () => {
                 >
                     <i className="far fa-save"></i>
                     <span> Guardar</span>
+                </button>
+
+                <button
+                    onClick={ handleDelete }
+                    style={{display : activeEvent?.title ? '' : 'none'}}
+                    className="btn btn-outline-danger btn-block ms-2"
+                >
+                    <i className="fas fa-trash-alt"></i>
+                    <span> Borrar</span>
                 </button>
 
             </form>
