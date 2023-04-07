@@ -12,7 +12,7 @@ const validarCampos = (req, res = response, next) => {
         });
     }
 
-    next(); // e utiliza para indicarle a Express que la función validarCampos ha terminado de manejar la solicitud actual
+    next(); // se utiliza para indicarle a Express que la función validarCampos ha terminado de manejar la solicitud actual
 }
 
 module.exports = {

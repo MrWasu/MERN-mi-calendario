@@ -97,6 +97,7 @@ export const CalendarModal = () => {
         closeDateModal();
         setFormSubmitted(false);
     }
+    
     const { startDeletingEvent } = useCalendarStore();
 
     const handleDelete = () => {

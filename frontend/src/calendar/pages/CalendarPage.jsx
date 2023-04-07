@@ -8,7 +8,6 @@ import { localizer, getMessagesES } from '../../helpers';
 import { useUiStore, useCalendarStore, useAuthStore } from '../../hooks';
 
 
-
 export const CalendarPage = () => {
 
   const { user } = useAuthStore();
@@ -47,7 +46,6 @@ export const CalendarPage = () => {
     setLastView(event)
   }
 
-
   useEffect(() => {
     startLoadingEvents()
   }, [])
@@ -74,13 +72,10 @@ export const CalendarPage = () => {
         onView={onViewChanged}
       />
 
-
       <CalendarModal />
 
       <ButtonAddNew />
       <ButtonDelete />
-
-
     </>
   )
 }

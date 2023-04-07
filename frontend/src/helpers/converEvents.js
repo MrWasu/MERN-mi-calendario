@@ -1,6 +1,5 @@
 import { parseISO } from 'date-fns';
 
-
 export const convertEvents = ( events = []) => {
 
     return events.map( event => {
@@ -10,5 +9,4 @@ export const convertEvents = ( events = []) => {
 
         return event;
     })
-
 }

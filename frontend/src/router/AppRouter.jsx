@@ -8,8 +8,7 @@ import { useEffect } from 'react';
 
 export const AppRouter = () => {
 
-    const { status, checkAuthToken } = useAuthStore(); // apuntes junto a todo lo que sea JWT en frontend y agreagrlo aapuntes jwt
-    // const authStatus = 'not-authenticated'; // 'authenticated'; // 'not-authenticated';
+    const { status, checkAuthToken } = useAuthStore(); t
 
     useEffect(() => {
         checkAuthToken();

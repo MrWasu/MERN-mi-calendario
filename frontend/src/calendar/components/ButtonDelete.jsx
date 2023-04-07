@@ -11,7 +11,6 @@ export const ButtonDelete = () => {
         startDeletingEvent();
     }
 
-
     return (
         <button
             className="btn btn-danger fab-danger"

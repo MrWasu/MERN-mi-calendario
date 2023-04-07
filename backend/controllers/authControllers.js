@@ -37,7 +37,8 @@ const crearUsuario = async (req, res = response) => {
         const salt = bcrypt.genSaltSync();
         usuario.password = bcrypt.hashSync(password, salt); 
 
-        await usuario.save(); // se guardaa en la base de datos
+        // se guardaa en la base de datos
+        await usuario.save();
 
         // Se crea el JWT
         const token = await generarJWT(usuario.id, usuario.name);
@@ -64,8 +65,6 @@ const crearUsuario = async (req, res = response) => {
         ok: false,
         msg: 'nombre incorrecto'
     }) */
-
-
 
 
 const loginUsuario = async (req, res = response) => {
