@@ -37,7 +37,7 @@ router.post(
 
 router.get('/renew', validarJWT, revalidarToken); // vuelve a actualizar el token para añadir otras tres horas al usuario
 
-module.exports = router; // asi se hacen las exportaciones en node
+module.exports = router; 
 /* router.post('/register', (req, res) => {
     
    res.json( {

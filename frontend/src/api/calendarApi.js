@@ -1,15 +1,13 @@
 import axios from 'axios';
-import { getEnvVariables } from '../helpers'; // apuntes
+import { getEnvVariables } from '../helpers'; 
 
 const { VITE_API_URL } = getEnvVariables()
-
 
 const calendarApi = axios.create({
     baseURL: VITE_API_URL
 });
 
-// Todo: configurar interceptores
-calendarApi.interceptors.request.use( config => { // apuntes de esto
+calendarApi.interceptors.request.use(config => { 
 
     config.headers = {
         ...config.headers,
@@ -19,8 +17,4 @@ calendarApi.interceptors.request.use( config => { // apuntes de esto
     return config;
 })
 
-
 export default calendarApi;
-
-
-
